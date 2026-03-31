@@ -1,0 +1,25 @@
+- name: Configure Web Servers
+  hosts: web
+  become: yes
+
+  tasks:
+
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start Apache
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Deploy Web Page
+      copy:
+        content: "<h1>Terraform + Ansible + Auto Scaling Project</h1>"
+        dest: /var/www/html/index.html
