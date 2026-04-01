@@ -1,7 +1,7 @@
 resource "aws_instance" "web_instance" {
   ami                         = "ami-0f58b397bc5c1f2e8"
-  instance_type               = "t2.micro"
-  key_name                    = "my-keypair"
+  instance_type               = "t3.micro"
+  key_name                    = "rahulgr.pem"
   subnet_id                   = aws_subnet.public_subnet_az1.id
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
