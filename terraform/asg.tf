@@ -1,22 +1,3 @@
-  GNU nano 8.7                                                                       asg.tf                                                                       Modified
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 resource "aws_autoscaling_group" "asg" {
   desired_capacity = 2
   max_size         = 3
@@ -36,4 +17,3 @@ resource "aws_autoscaling_group" "asg" {
 
   health_check_type = "ELB"
 }
-
