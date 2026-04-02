@@ -1,9 +1,9 @@
 resource "aws_launch_template" "web" {
   name_prefix   = "rahul-template"
   image_id      = "ami-0f58b397bc5c1f2e8"
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
-  key_name = "rahulgr"
+  key_name = var.key_name
 
   network_interfaces {
     associate_public_ip_address = false
@@ -19,4 +19,3 @@ resource "aws_launch_template" "web" {
               EOF
   )
 }
-
